@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+
+    <div class="row align-items-center">
+        
+        <!-- Login Form -->
+        <div class="col-lg-6 shadow p-4 rounded bg-white">
+            <h3 class="mb-4">Login</h3>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+
+        <!-- Image -->
+        <div class="col-lg-6 mt-4 mt-lg-0">
+            <img src="https://travelji.com/wp-content/uploads/Hotel-Tips.jpg" alt="Login Image" class="img-fluid shadow rounded">
+        </div>
+
+    </div>
+</div>
+{% endblock %}
